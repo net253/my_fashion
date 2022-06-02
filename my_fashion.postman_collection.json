@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "1d1d091b-bae0-4230-9d2b-933aebb31e4d",
+		"name": "my_fashion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20869426"
+	},
+	"item": [
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3011/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gender\":\"male\",\r\n    \"category\":\"\",\r\n    \"size\":\"\",\r\n    \"limit\":\"100\",\r\n    \"pageIndex\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3011/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "product list",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gender\": \"\",\r\n    \"category\": \"\",\r\n    \"size\": \"xl\",\r\n    \"limit\": 50,\r\n    \"pageIndex\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "858"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35a-4jCiYBv/tM5Klhhypk+HvxQoIpo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 18:46:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"state\": true,\n    \"result\": [\n        {\n            \"PRODUCT_ID\": 6,\n            \"CATEGOLY\": \"Plain Color\",\n            \"GENDER\": \"male\",\n            \"SIZE\": \"xl\",\n            \"AMOUNT\": 20,\n            \"PRICE\": 199,\n            \"DATE_TIME_UPDATE\": \"2022-05-28T15:33:36.000Z\"\n        },\n        {\n            \"PRODUCT_ID\": 11,\n            \"CATEGOLY\": \"Plain Color\",\n            \"GENDER\": \"female\",\n            \"SIZE\": \"xl\",\n            \"AMOUNT\": 20,\n            \"PRICE\": 199,\n            \"DATE_TIME_UPDATE\": \"2022-05-28T15:33:36.000Z\"\n        },\n        {\n            \"PRODUCT_ID\": 16,\n            \"CATEGOLY\": \"Pattern\",\n            \"GENDER\": \"male\",\n            \"SIZE\": \"xl\",\n            \"AMOUNT\": 20,\n            \"PRICE\": 199,\n            \"DATE_TIME_UPDATE\": \"2022-05-28T15:58:17.000Z\"\n        },\n        {\n            \"PRODUCT_ID\": 21,\n            \"CATEGOLY\": \"Pattern\",\n            \"GENDER\": \"female\",\n            \"SIZE\": \"xl\",\n            \"AMOUNT\": 20,\n            \"PRICE\": 199,\n            \"DATE_TIME_UPDATE\": \"2022-05-28T15:58:17.000Z\"\n        },\n        {\n            \"PRODUCT_ID\": 26,\n            \"CATEGOLY\": \"Figure\",\n            \"GENDER\": \"male\",\n            \"SIZE\": \"xl\",\n            \"AMOUNT\": 20,\n            \"PRICE\": 199,\n            \"DATE_TIME_UPDATE\": \"2022-05-28T15:59:42.000Z\"\n        },\n        {\n            \"PRODUCT_ID\": 31,\n            \"CATEGOLY\": \"Figure\",\n            \"GENDER\": \"female\",\n            \"SIZE\": \"xl\",\n            \"AMOUNT\": 20,\n            \"PRICE\": 199,\n            \"DATE_TIME_UPDATE\": \"2022-05-28T15:59:42.000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"customerID\":\"1\",\r\n    \"productID\":\"1\",\r\n    \"amount\":\"1\",\r\n    \"deliveryAddress\":\"12/34 ม.3 ซ.5 ต.ศรีราชา อ.ศรีราชา จ.ชลบุรี 20210\",\r\n    \"status\":\"shipped\",\r\n    \"paidDate\":\"2022-05-28 08:00:00\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3011/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerID\": 3,\r\n    \"productID\": 2,\r\n    \"amount\": 2,\r\n    \"deliveryAddress\": \"72/44 ม.7 ซ.1 ต.บ่อวิน อ.ศรีราชา จ.ชลบุรี 20230\",\r\n    \"status\": \"prepare \",\r\n    \"paidDate\": \"2022-04-20 08:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "281"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"119-3tr6UVeBFD7/3MYC5II8l9j3jEk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 18:34:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"state\": true,\n    \"massage\": \"Order has been created successfully.\",\n    \"data\": {\n        \"customerID\": 3,\n        \"productID\": 2,\n        \"amount\": 2,\n        \"deliveryAddress\": \"72/44 ม.7 ซ.1 ต.บ่อวิน อ.ศรีราชา จ.ชลบุรี 20230\",\n        \"status\": \"prepare \",\n        \"paidDate\": \"2022-04-20 08:00:00\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "order list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"shipped\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3011/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "order list",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateStart\": \"1970-01-01 08:00:00\",\r\n    \"dateEnd\": \"2022-05-28 09:00:00\",\r\n    \"status\": \"shipping\",\r\n    \"limit\": 10,\r\n    \"pageIndex\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "305"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"131-a5k41SDDQ9UTE+PJuzwr/RPwYKE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 18:45:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"state\": true,\n    \"result\": [\n        {\n            \"ORDER_ID\": 1,\n            \"CUSTOMER_ID\": 1,\n            \"PRODUCT_ID\": 1,\n            \"AMOUNT\": 1,\n            \"DELIVERY_ADDRESS\": \"12/34 ม.3 ซ.5 ต.มะขามคู่ อ.นิคมพัฒนา จ.ระยอง 20110\",\n            \"STATUS\": \"shipping\",\n            \"PAID_DATE\": \"2022-04-16T01:00:00.000Z\",\n            \"DATETIME\": \"2022-05-28T18:27:27.000Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
