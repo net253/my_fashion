@@ -1,0 +1,6 @@
+node_modules
+.prettierignore
+my_fashion.postman_collection.json
+package-lock.json
+Dockerfile
+README.md
